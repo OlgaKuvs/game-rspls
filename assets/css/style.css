@@ -44,3 +44,25 @@ h2 {
 .logo:nth-child(5) {
     color: #006E7F;
 }
+
+.game-rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-rules-text {
+    background-color: #fff;
+    height: 525px;
+    padding-right: 20px;
+}
+
+.game-rules-text > div > ul > li {
+    list-style: none;
+    line-height: 2.3rem;  
+    
+}
+
+.game-rules-text > div > ul > li > img {
+    vertical-align: center;
+}
