@@ -3,9 +3,11 @@ const items = menu.querySelectorAll('.circular-menu-item');
 const button = menu.querySelector('.start-button');
 const rulesImage = document.querySelector('.game-rules');
 const showResults = document.querySelector('.show-results');
+const scoreboard = document.querySelector('.scoreboard');
 
 let length = items.length;
 const radius = 50;
+let flagAgain = 0;
 
 function startGame() {   
 
@@ -17,7 +19,7 @@ function startGame() {
         length = 3;        
         const arc = 2* Math.PI * (1 / length);
 
-        console.log(length);
+        // console.log(length);
 
         for (let i=0; i < length; i++) {
             const angle = i * arc;
@@ -31,22 +33,29 @@ function startGame() {
             //console.log(items[i]);
            
         }  
-} 
-
-button.id = "circular-menu-item-hidden";
-showResults.id = "show-results-hidden";
-
-for (let i=0; i < length; i++) {
+      
+    for (let i=0; i < length; i++) {
    
         items[i].classList.remove("menu-item-hidden");
         items[i].classList.add("circular-menu-item");
 
-        // console.log("Item", item);
-   
-}
+        // console.log("Item", item); 
+        }
 
-function hideResults() {
-    
+        if(flagAgain === 0) {
+            ShowHideItems();         
+            playGame();
+        } else {
+            hideResults();
+            playGame();
+            //console.log("aaa");
+            
+        }   
+} 
+
+
+
+ function hideResults() {    
        
     button.id = "circular-menu-item-hidden";
     showResults.id = "show-results-hidden";
@@ -58,8 +67,32 @@ function hideResults() {
 
             console.log("Item", item[i]);
        
-    }
+    }   
 
+} 
+
+
+function ShowHideItems() {
+    button.id = 'circular-menu-item-hidden';
+    rulesImage.id = 'game-rules-hidden'; 
+    showResults.id = "show-results-hidden";   
+    menu.style.marginTop = "100px";      
+}
+
+function playGame() {
+    
+    let items = document.getElementsByClassName("circular-menu-item");
    
+     for (let item of items) {
+        item.addEventListener("click", function() {
+        
+            console.log("ccc ", item);
+           
+            userChoice = item.id;       
 
+                       
+            
+        });           
+    };         
+        
 }

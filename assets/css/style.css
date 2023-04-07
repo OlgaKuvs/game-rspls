@@ -188,6 +188,18 @@ h2 {
     background-color: #87c2cb;
 }
 
+
+.scorebox {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.scorebox > h2 {       
+    margin-left: 10px;
+    color: #EE5007;
+}
+
 #circular-menu-item-hidden {
     display: none;      
 }
