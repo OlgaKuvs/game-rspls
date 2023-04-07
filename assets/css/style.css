@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Nanum+Gothic&display=swap');
+
+body {
+    height: 100vh;
+    background: url('../images/favpng_angle-line-pattern-point-font1.png') no-repeat center center;
+    background-color: #fffef4;
+    font-family: Nanum Gothic, Arial, Helvetica, sans-serif;
+    color: #006E7F;
+
+}
+
+header {
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: Alkatra, Arial, Helvetica, sans-serif;    
+}
+
+h2 {
+    text-align: center;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.logo:nth-child(1) {
+    color: #B22727;
+}
+
+.logo:nth-child(2) {
+    color: #F8CB2E;
+}
+
+.logo:nth-child(3) {
+    color: #EE5007;
+}
+
+.logo:nth-child(4) {
+    color:  #007f11;
+}
+
+.logo:nth-child(5) {
+    color: #006E7F;
+}
