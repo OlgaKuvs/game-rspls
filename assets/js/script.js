@@ -4,6 +4,17 @@ const button = menu.querySelector('.start-button');
 const rulesImage = document.querySelector('.game-rules');
 const showResults = document.querySelector('.show-results');
 const scoreboard = document.querySelector('.scoreboard');
+const userScore = document.querySelector('.user-score');
+const compScore = document.querySelector('.computer-score');
+
+
+const arrChoices = [
+    [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
+    [2, 1, -1], [2, 2, 0], [2, 3, 1], [2, 4, 1], [2, 5, -1],
+    [3, 1, 1], [3, 2, -1], [3, 3, 0], [3, 4, -1], [3, 5, 1],
+    [4, 1, -1], [4, 2, -1], [4, 3, 1], [4, 4, 0], [4, 5, 1],
+    [5, 1, 1], [5, 2, 1], [5, 3, -1], [5, 4, -1], [5, 5, 0]                
+  ]; 
 
 let length = items.length;
 const radius = 50;
@@ -88,11 +99,38 @@ function playGame() {
         
             console.log("ccc ", item);
            
-            userChoice = item.id;       
+            userChoice = item.id;
+
+            console.log("userChoice", userChoice);
+
+            compChoice = computerChoice();
+
+            result = calculateResult(userChoice, compChoice);
 
                        
             
         });           
     };         
         
+}
+
+
+function computerChoice() {
+    let compChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+    return compChoice;
+}
+
+
+
+function calculateResult(userChoiceFP, compChoiceFP) {    
+   
+    for(let i=0; i<arrChoices.length; i++) {  
+        
+        if(parseInt(userChoiceFP) === arrChoices[i][0] && compChoiceFP === arrChoices[i][1]) {
+            console.log(" User "  + userChoiceFP + " Comp " + compChoiceFP + " Result " + arrChoices[i][2]);
+            return arrChoices[i][2];
+        }        
+    
+    }
+    
 }
