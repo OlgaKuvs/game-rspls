@@ -214,6 +214,12 @@ h3 {
     color: #EE5007;
 }
 
+figcaption {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #1f1f1f;
+}
+
 #circular-menu-item-hidden {
     display: none;      
 }
@@ -234,3 +240,28 @@ h3 {
     display: none;     
 }
 
+.level-text {
+    display: none;
+    margin-right: 70px;
+}
+
+.scoreboard {
+    display: none; 
+}
+
+
+footer {
+    position: relative; 
+    bottom: 0;
+    text-align: center;   
+}
+
+#footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2rem; 
+    background-color:  #fffef4;;
+    padding: 10px 0 10px 0; 
+    
+}
