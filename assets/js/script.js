@@ -3,6 +3,7 @@ const items = menu.querySelectorAll('.circular-menu-item');
 const button = menu.querySelector('.start-button');
 const rulesImage = document.querySelector('.game-rules');
 const showResults = document.querySelector('.show-results');
+const levelText = document.querySelector('.level-text');
 const scoreboard = document.querySelector('.scoreboard');
 const userScore = document.querySelector('.user-score');
 const compScore = document.querySelector('.computer-score');
@@ -82,7 +83,7 @@ function startGame() {
             items[i].classList.remove("menu-item-hidden");
             items[i].classList.add("circular-menu-item");
 
-            console.log("Item", item[i]);
+            // console.log("Item", item[i]);
        
     }   
 
@@ -93,34 +94,38 @@ function ShowHideItems() {
     button.id = 'circular-menu-item-hidden';
     rulesImage.id = 'game-rules-hidden'; 
     showResults.id = "show-results-hidden";   
-    menu.style.marginTop = "100px";      
+    menu.style.marginTop = "100px"; 
+    levelText.style.display = "block"; 
+    scoreboard.style.display = "block";     
 }
 
 function playGame() {
     
     let items = document.getElementsByClassName("circular-menu-item");
    
-     for (let item of items) {
-        item.addEventListener("click", function() {
-        
-            console.log("ccc ", item);
-           
-            userChoice = item.id;
-
-            compChoice = computerChoice();
-
-            result = calculateResult(userChoice, compChoice);
-
-            whoWon = showResult(userChoice, compChoice); 
-
-
-                       
+    if (level === 1 && flagItems === 1)   {
+        for (let item of items) {
+            item.addEventListener("click", function() {
             
-        });           
-    };  
+                console.log("ccc ", item);
+            
+                userChoice = item.id;
+
+                compChoice = computerChoice();
+
+                result = calculateResult(userChoice, compChoice);
+
+                whoWon = showResult(userChoice, compChoice); 
+
+
+                        
+                
+            });           
+        };  
     
-    flagItems++;  
+        flagItems++;  
         
+    }
 }
 
 
@@ -169,10 +174,8 @@ function showResult(userChoiceRes, compChoiceRes) {
 
     console.log(compContainer);
 
-    for (let item of items) {    
-        
+    for (let item of items) {            
             item.removeAttribute('style');
-
             
     }
 
@@ -207,8 +210,22 @@ function showResult(userChoiceRes, compChoiceRes) {
 
     //console.log("Button", button);    
     
-    flagAgain = 1;   
-
+    flagAgain = 1;  
     
+    newLevel = setGameLevel(userCounter, compCounter);
+
+}
+
+function setGameLevel(userCounterNew, compCounterNew) {
+
+    if(userCounterNew === 3 && level <= 3) {
+        popUpLevel.style.display = "block";        
+        console.log(popupLevelMessage);
+        popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
+        level++;         
+        
+        console.log("userCounter2", userCounterNew);
+        console.log("compCounter2", compCounterNew);        
+    } 
 
 }
