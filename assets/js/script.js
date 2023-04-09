@@ -31,6 +31,10 @@ const arrChoices = [
 
 function startGame() {   
 
+    if(level === 1) {  
+        
+        // console.log("flag 1", userCounter);
+
         for (let item of items) {
             item.classList.remove("circular-menu-item");
             item.classList.add("menu-item-hidden"); 
@@ -39,7 +43,7 @@ function startGame() {
         length = 3;        
         const arc = 2* Math.PI * (1 / length);
 
-        // console.log(length);
+        //console.log(length);
 
         for (let i=0; i < length; i++) {
             const angle = i * arc;
@@ -53,6 +57,64 @@ function startGame() {
             //console.log(items[i]);
            
         }  
+
+    } else if(level === 2) {    
+       
+
+        console.log("flag 2", userCounter);
+        
+        levelText.innerText = "Level 2";          
+
+        for (let item of items) {
+            item.classList.remove("circular-menu-item");
+            item.classList.add("menu-item-hidden"); 
+        } 
+
+        length = 4;        
+        const arc = 2* Math.PI * (1 / length);
+
+        console.log(length);
+
+        for (let i=0; i < length; i++) {
+            const angle = i * arc;
+            const x = radius * Math.cos(angle);
+            const y = radius * Math.sin(angle);
+
+            items[i].style.left = 50 + x + '%';
+            items[i].style.top = 50 + y + '%';
+            items[i].classList.remove("menu-item-hidden");
+            items[i].classList.add("circular-menu-item"); 
+            // console.log(items[i]);
+           
+        }  
+    } else if(level === 3) { 
+
+        levelText.innerText = "Level 3";
+        
+        for (let item of items) {
+            item.classList.remove("circular-menu-item");
+            item.classList.add("menu-item-hidden"); 
+        } 
+
+        length = 5;        
+        const arc = 2* Math.PI * (1 / length);
+
+        console.log(length);
+
+        for (let i=0; i < length; i++) {
+            const angle = i * arc;
+            const x = radius * Math.cos(angle);
+            const y = radius * Math.sin(angle);
+
+            items[i].style.left = 50 + x + '%';
+            items[i].style.top = 50 + y + '%';
+            items[i].classList.remove("menu-item-hidden");
+            items[i].classList.add("circular-menu-item"); 
+            //console.log(items[i]);
+           
+        }  
+
+    }
       
     for (let i=0; i < length; i++) {
    
@@ -76,6 +138,7 @@ function startGame() {
 
 
 
+
  function hideResults() {    
        
     button.id = "circular-menu-item-hidden";
@@ -95,8 +158,7 @@ function startGame() {
 
 function ShowHideItems() {
     button.id = 'circular-menu-item-hidden';
-    rulesImage.id = 'game-rules-hidden'; 
-    showResults.id = "show-results-hidden";   
+    rulesImage.id = 'game-rules-hidden';      
     menu.style.marginTop = "100px"; 
     levelText.style.display = "block"; 
     scoreboard.style.display = "block";     
@@ -107,6 +169,7 @@ function playGame() {
     let items = document.getElementsByClassName("circular-menu-item");
    
     if (level === 1 && flagItems === 1)   {
+
         for (let item of items) {
             item.addEventListener("click", function() {
             
@@ -119,8 +182,6 @@ function playGame() {
                 result = calculateResult(userChoice, compChoice);
 
                 whoWon = showResult(userChoice, compChoice); 
-
-
                         
                 
             });           
@@ -129,7 +190,39 @@ function playGame() {
         flagItems++;  
         
     }
+
+    if (level === 2 && flagItems === 2)   {
+        
+        let addIcon = document.getElementById(4);
+        
+        console.log("addIcon", addIcon);
+        
+        userCounter = 0;
+        compCounter = 0;
+        userScore.innerText = userCounter; 
+        compScore.innerText = compCounter; 
+
+
+        addIcon.addEventListener("click", function() {       
+                         
+            userChoice = addIcon.id;
+
+            // console.log("userChoice", userChoice);
+
+            compChoice = computerChoice();
+
+            result = calculateResult(userChoice, compChoice);
+
+            whoWon = showResult(userChoice, compChoice);             
+              
+                    
+        }); 
+   
+    };
+    flagItems++;  
+        
 }
+
 
 
 function computerChoice() {
@@ -228,13 +321,14 @@ function setGameLevel(userCounterNew, compCounterNew) {
     if(userCounterNew === 3 && level < 3) {
         popUpLevel.style.display = "block";        
         console.log(popupLevelMessage);
+        levelUpHide.style.visibility = "visible"; 
         popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
         level++;         
         
         console.log("userCounter2", userCounterNew);
         console.log("compCounter2", compCounterNew);        
     } else if(userCounterNew === 3 && level >= 3) {
-       
+        gameOver();
     }
 
 }
