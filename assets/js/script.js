@@ -7,6 +7,14 @@ const scoreboard = document.querySelector('.scoreboard');
 const userScore = document.querySelector('.user-score');
 const compScore = document.querySelector('.computer-score');
 
+let level = 1;
+let flagItems = 1;
+let userCounter = 0;
+let compCounter = 0;
+let flagAgain = 0;
+let length = items.length;
+const radius = 50;
+
 
 const arrChoices = [
     [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
@@ -16,9 +24,7 @@ const arrChoices = [
     [5, 1, 1], [5, 2, 1], [5, 3, -1], [5, 4, -1], [5, 5, 0]                
   ]; 
 
-let length = items.length;
-const radius = 50;
-let flagAgain = 0;
+ 
 
 function startGame() {   
 
@@ -101,16 +107,19 @@ function playGame() {
            
             userChoice = item.id;
 
-            console.log("userChoice", userChoice);
-
             compChoice = computerChoice();
 
             result = calculateResult(userChoice, compChoice);
 
+            whoWon = showResult(userChoice, compChoice); 
+
+
                        
             
         });           
-    };         
+    };  
+    
+    flagItems++;  
         
 }
 
@@ -133,4 +142,73 @@ function calculateResult(userChoiceFP, compChoiceFP) {
     
     }
     
+}
+
+function showResult(userChoiceRes, compChoiceRes) {
+
+    // console.log("flag 4", userCounter);
+
+    let userId = userChoiceRes;
+    let compId = compChoiceRes.toString();
+
+    console.log(userId);
+    console.log(compId);
+
+    let userChoiceFigure = document.getElementById(userId).innerHTML;
+
+    console.log(userChoiceFigure);
+    
+
+    let userContainer = document.getElementById("user-choice");
+    userContainer.innerHTML = `<h2>Your choice</h2> <br> ${userChoiceFigure}`;
+
+    let compChoiceFigure = document.getElementById(compId).innerHTML;
+    let compContainer = document.getElementById("computer-choice");
+    
+    compContainer.innerHTML = `<h2>Computer choice</h2> <br> ${compChoiceFigure}`;
+
+    console.log(compContainer);
+
+    for (let item of items) {    
+        
+            item.removeAttribute('style');
+
+            
+    }
+
+    showResults.removeAttribute("id");  
+    
+     let whoWonContainer = document.getElementById("who-won");
+
+     console.log("result1 =", result);
+
+
+
+     if(result === 1) {    
+        whoWonContainer.innerHTML = "<h1>YOU WON!!!</h1>"; 
+        userCounter++;  
+        userScore.innerText = userCounter;                
+        console.log("userCounter", userCounter); 
+        console.log("result2", result);   
+
+    } else if (result === 0) {
+        whoWonContainer.innerHTML = "<h1>DRAW</h1>";
+        console.log("result3", result); 
+    } else if (result === -1) {
+        whoWonContainer.innerHTML = "<h1>Sorry, you lost...</h1>";        
+        compCounter++;  
+        compScore.innerText = compCounter;   
+        console.log("result4", result);     
+        console.log("compScore.innerText", compScore.innerText);  
+    }   
+     
+    button.id = '';
+    button.textContent = "Play again";    
+
+    //console.log("Button", button);    
+    
+    flagAgain = 1;   
+
+    
+
 }

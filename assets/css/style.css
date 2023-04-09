@@ -249,6 +249,9 @@ figcaption {
     display: none; 
 }
 
+#user-choice, #computer-choice {
+    color: #B22727;
+}
 
 footer {
     position: relative; 
