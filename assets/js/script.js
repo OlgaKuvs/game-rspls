@@ -7,15 +7,18 @@ const levelText = document.querySelector('.level-text');
 const scoreboard = document.querySelector('.scoreboard');
 const userScore = document.querySelector('.user-score');
 const compScore = document.querySelector('.computer-score');
+const popUpLevel = document.querySelector('.popup-level');
+const popupLevelMessage = document.querySelector('.popup-level-message');
+const levelUpHide = document.getElementById('level-up-button');
 
 let level = 1;
 let flagItems = 1;
 let userCounter = 0;
 let compCounter = 0;
 let flagAgain = 0;
+
 let length = items.length;
 const radius = 50;
-
 
 const arrChoices = [
     [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
@@ -24,8 +27,7 @@ const arrChoices = [
     [4, 1, -1], [4, 2, -1], [4, 3, 1], [4, 4, 0], [4, 5, 1],
     [5, 1, 1], [5, 2, 1], [5, 3, -1], [5, 4, -1], [5, 5, 0]                
   ]; 
-
- 
+   
 
 function startGame() {   
 
@@ -66,7 +68,8 @@ function startGame() {
         } else {
             hideResults();
             playGame();
-            //console.log("aaa");
+            closePopup();
+            console.log("aaa");
             
         }   
 } 
@@ -218,7 +221,11 @@ function showResult(userChoiceRes, compChoiceRes) {
 
 function setGameLevel(userCounterNew, compCounterNew) {
 
-    if(userCounterNew === 3 && level <= 3) {
+    console.log("userCounterNew", userCounterNew);
+    console.log("compCounterNew", compCounterNew); 
+    console.log("level", level); 
+
+    if(userCounterNew === 3 && level < 3) {
         popUpLevel.style.display = "block";        
         console.log(popupLevelMessage);
         popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
@@ -226,6 +233,12 @@ function setGameLevel(userCounterNew, compCounterNew) {
         
         console.log("userCounter2", userCounterNew);
         console.log("compCounter2", compCounterNew);        
-    } 
+    } else if(userCounterNew === 3 && level >= 3) {
+       
+    }
 
+}
+
+function closePopup(){     
+    popUpLevel.style.display = "none";     
 }
