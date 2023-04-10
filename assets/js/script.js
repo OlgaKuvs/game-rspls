@@ -20,6 +20,10 @@ let flagAgain = 0;
 let length = items.length;
 const radius = 50;
 
+for (let item of items) { 
+    item.addEventListener("click", menuItemClick);
+}
+
 const arrChoices = [
     [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
     [2, 1, -1], [2, 2, 0], [2, 3, 1], [2, 4, 1], [2, 5, -1],
@@ -427,19 +431,28 @@ function setGameLevel(userCounterNew, compCounterNew) {
     console.log("compCounterNew", compCounterNew); 
     console.log("level", level); 
 
-    if(userCounterNew === 3 && level < 3) {
-        popUpLevel.style.display = "block";        
-        console.log(popupLevelMessage);
-        levelUpHide.style.visibility = "visible"; 
-        popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
-        level++;         
-        
-        console.log("userCounter2", userCounterNew);
-        console.log("compCounter2", compCounterNew);        
-    } else if(userCounterNew === 3 && level >= 3) {
-        gameOver();
-    }
 
+if (userCounterNew === 3  && level < 3) {
+
+    popUpLevel.style.display = "block"; 
+    levelUpHide.style.visibility = "visible";       
+    // console.log(popupLevelMessage);
+    popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
+    level++;       
+    
+
+} else if (compCounterNew === 3 && level < 3) {
+    popUpLevel.style.display = "block";              
+    popupLevelMessage.innerHTML = "<h1>Sorry, you lost...</h1>";          
+
+
+} else if(compCounterNew === 3 && level >= 3) {
+    //console.log("gameOver1");
+    gameOver();
+} else if(userCounterNew === 3 && level >= 3) {
+    console.log("gameOver1");
+    gameOverWon();
+}    
 }
 
 function closePopup(){     
@@ -450,4 +463,10 @@ function gameOver() {
     levelUpHide.style.visibility = "hidden";
     popUpLevel.style.display = "block";
     popupLevelMessage.innerHTML = "<h1>Game over!</h1>";      
+}
+
+function gameOverWon() {
+    levelUpHide.style.visibility = "hidden";
+    popUpLevel.style.display = "block";
+    popupLevelMessage.innerHTML = "<h1> <div>Congraduations!</div><div>You beat the computer!</div><div>Game over!<div></h1>"; 
 }
