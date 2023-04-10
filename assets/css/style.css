@@ -73,7 +73,8 @@ h3 {
 
 .game-rules-text > div > ul > li {
     list-style: none;
-    line-height: 1.5rem;  
+    line-height: 1.5rem; 
+    text-align: left; 
     
 }
 
