@@ -2,7 +2,7 @@ const menu = document.querySelector('.circular-menu');
 const items = menu.querySelectorAll('.circular-menu-item');
 const button = menu.querySelector('.start-button');
 const rulesImage = document.querySelector('.game-rules');
-const showResults = document.querySelector('.show-results');
+const finalResults = document.querySelector('.show-results');
 const levelText = document.querySelector('.level-text');
 const scoreboard = document.querySelector('.scoreboard');
 const userScore = document.querySelector('.user-score');
@@ -39,15 +39,28 @@ function restartGame() {
     userScore.innerText = userCounter; 
     compScore.innerText = compCounter;
     levelText.innerText = "Level 1";     
-    showResults.id = "show-results-hidden";   
+    finalResults.id = "show-results-hidden";   
 
     closePopup();    
     startGame();
 }
+
+function startGame() { 
+
+    setNumberOfItems(); 
+    
+    if(flagAgain === 0) {
+        ShowHideSections();         
+        checkLevel();
+    } else {
+        hideResults();
+        checkLevel();
+        closePopup();        
+        //console.log("aaa");
+    }    
+}
    
-
-function startGame() {   
-
+function setNumberOfItems() {
     if(level === 1) {  
         
         // console.log("flag 1", userCounter);
@@ -75,7 +88,7 @@ function startGame() {
            
         }  
 
-    } else if(level === 2) {    
+    } else if(level === 2) {        
        
 
         console.log("flag 2", userCounter);
@@ -129,41 +142,19 @@ function startGame() {
             items[i].classList.add("circular-menu-item"); 
             //console.log(items[i]);
            
-        }   
+        }  
 
     } else {
-        console.log("gameOver1");
         gameOver();
     }
 
-      
-    for (let i=0; i < length; i++) {
-   
-        items[i].classList.remove("menu-item-hidden");
-        items[i].classList.add("circular-menu-item");
-
-        // console.log("Item", item); 
-        }
-
-        if(flagAgain === 0) {
-            ShowHideItems();         
-            playGame();
-        } else {
-            hideResults();
-            playGame();
-            closePopup();
-            console.log("aaa");
-            
-        }   
-} 
-
-
+}
 
 
  function hideResults() {    
        
     button.id = "circular-menu-item-hidden";
-    showResults.id = "show-results-hidden";
+    finalResults.id = "show-results-hidden";
 
     for (let i=0; i < length; i++) {
        
@@ -176,8 +167,41 @@ function startGame() {
 
 } 
 
+function checkLevel() {         
 
-function ShowHideItems() {
+    if (level === 1 && flagItems === 1)   {            
+        
+        flagItems++;    
+                      
+    } else if(level === 2 && flagItems === 2) {                   
+   
+        userCounter = 0;
+        compCounter = 0;
+        userScore.innerText = userCounter; 
+        compScore.innerText = compCounter;  
+
+        console.log("RESET", userCounter, " ", compCounter);           
+        flagItems++;    
+
+    } else if(level === 3 && flagItems === 3) {          
+   
+        userCounter = 0;
+        compCounter = 0;
+        userScore.innerText = userCounter; 
+        compScore.innerText = compCounter;  
+
+        console.log("RESET3", userCounter, " ", compCounter);
+            
+        flagItems++;    
+
+    }  else {
+            console.log("gameOver3");
+            gameOver();
+    }
+}
+
+
+function ShowHideSections() {
     button.id = 'circular-menu-item-hidden';
     rulesImage.id = 'game-rules-hidden';      
     menu.style.marginTop = "100px"; 
@@ -185,6 +209,7 @@ function ShowHideItems() {
     scoreboard.style.display = "block";     
 }
 
+/*
 function playGame() {
     
     let items = document.getElementsByClassName("circular-menu-item");
@@ -288,13 +313,31 @@ function playGame() {
         
 }
 
+*/
+
+function menuItemClick() {               
+                
+    userChoice = this.id;
+
+    compChoice = computerChoice();
+
+    result = calculateResult(userChoice, compChoice);
+
+    whoWon = showResult(userChoice, compChoice); 
+
+// console.log(' User1 ' + userChoice);                
+
+    //console.log(' comp1 ' + compChoice);                
+
+    //console.log(' res1 ' + result);  
+   
+}  
 
 
 function computerChoice() {
     let compChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     return compChoice;
 }
-
 
 
 function calculateResult(userChoiceFP, compChoiceFP) {    
@@ -340,7 +383,7 @@ function showResult(userChoiceRes, compChoiceRes) {
             
     }
 
-    showResults.removeAttribute("id");  
+    finalResults.removeAttribute("id");  
     
      let whoWonContainer = document.getElementById("who-won");
 
@@ -376,6 +419,7 @@ function showResult(userChoiceRes, compChoiceRes) {
     newLevel = setGameLevel(userCounter, compCounter);
 
 }
+
 
 function setGameLevel(userCounterNew, compCounterNew) {
 
