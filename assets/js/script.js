@@ -69,10 +69,7 @@ function setNumberOfItems() {
         
         // console.log("flag 1", userCounter);
 
-        for (let item of items) {
-            item.classList.remove("circular-menu-item");
-            item.classList.add("menu-item-hidden"); 
-        } 
+        hideGameItems();
 
         length = 3;        
         const arc = 2* Math.PI * (1 / length);
@@ -80,14 +77,13 @@ function setNumberOfItems() {
         //console.log(length);
 
         for (let i=0; i < length; i++) {
-            const angle = i * arc;
+            const angle = i * arc + 100;
             const x = radius * Math.cos(angle);
             const y = radius * Math.sin(angle);
 
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
-            items[i].classList.remove("menu-item-hidden");
-            items[i].classList.add("circular-menu-item"); 
+            showGameItems();
             //console.log(items[i]);
            
         }  
@@ -99,10 +95,7 @@ function setNumberOfItems() {
         
         levelText.innerText = "Level 2";          
 
-        for (let item of items) {
-            item.classList.remove("circular-menu-item");
-            item.classList.add("menu-item-hidden"); 
-        } 
+        hideGameItems();
 
         length = 4;        
         const arc = 2* Math.PI * (1 / length);
@@ -110,14 +103,13 @@ function setNumberOfItems() {
         console.log(length);
 
         for (let i=0; i < length; i++) {
-            const angle = i * arc;
+            const angle = i * arc + 150;
             const x = radius * Math.cos(angle);
             const y = radius * Math.sin(angle);
 
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
-            items[i].classList.remove("menu-item-hidden");
-            items[i].classList.add("circular-menu-item"); 
+            showGameItems();
             // console.log(items[i]);
            
         }  
@@ -125,10 +117,7 @@ function setNumberOfItems() {
 
         levelText.innerText = "Level 3";
         
-        for (let item of items) {
-            item.classList.remove("circular-menu-item");
-            item.classList.add("menu-item-hidden"); 
-        } 
+        hideGameItems();
 
         length = 5;        
         const arc = 2* Math.PI * (1 / length);
@@ -142,8 +131,7 @@ function setNumberOfItems() {
 
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
-            items[i].classList.remove("menu-item-hidden");
-            items[i].classList.add("circular-menu-item"); 
+            showGameItems();
             //console.log(items[i]);
            
         }  
@@ -160,14 +148,7 @@ function setNumberOfItems() {
     button.id = "circular-menu-item-hidden";
     finalResults.id = "show-results-hidden";
 
-    for (let i=0; i < length; i++) {
-       
-            items[i].classList.remove("menu-item-hidden");
-            items[i].classList.add("circular-menu-item");
-
-            // console.log("Item", item[i]);
-       
-    }   
+    showGameItems();
 
 } 
 
@@ -432,7 +413,7 @@ function setGameLevel(userCounterNew, compCounterNew) {
     console.log("level", level); 
 
 
-if (userCounterNew === 3  && level < 3) {
+if (userCounterNew === 1  && level < 3) {
 
     popUpLevel.style.display = "block"; 
     levelUpHide.style.visibility = "visible";       
@@ -469,4 +450,18 @@ function gameOverWon() {
     levelUpHide.style.visibility = "hidden";
     popUpLevel.style.display = "block";
     popupLevelMessage.innerHTML = "<h1> <div>Congraduations!</div><div>You beat the computer!</div><div>Game over!<div></h1>"; 
+}
+
+function hideGameItems() {
+    for (let i=0; i < length; i++) {          
+        items[i].classList.remove("circular-menu-item");  
+        items[i].classList.add("menu-item-hidden");    
+    } 
+}
+
+function showGameItems() {
+    for (let i=0; i < length; i++) {          
+        items[i].classList.remove("menu-item-hidden");  
+        items[i].classList.add("circular-menu-item");    
+    } 
 }
