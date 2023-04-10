@@ -112,9 +112,13 @@ function startGame() {
             items[i].classList.add("circular-menu-item"); 
             //console.log(items[i]);
            
-        }  
+        }   
 
+    } else {
+        console.log("gameOver1");
+        gameOver();
     }
+}
       
     for (let i=0; i < length; i++) {
    
@@ -259,7 +263,10 @@ function playGame() {
                         
             }); 
             flagItems++;       
-        }           
+        }   else {
+            console.log("gameOver3");
+            gameOver();
+    }        
     
         
 }
@@ -376,4 +383,10 @@ function setGameLevel(userCounterNew, compCounterNew) {
 
 function closePopup(){     
     popUpLevel.style.display = "none";     
+}
+
+function gameOver() { 
+    levelUpHide.style.visibility = "hidden";
+    popUpLevel.style.display = "block";
+    popupLevelMessage.innerHTML = "<h1>Game over!</h1>";      
 }
