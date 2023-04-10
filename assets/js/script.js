@@ -185,13 +185,19 @@ function playGame() {
                         
                 
             });           
-        };  
+        }  
     
-        flagItems++;  
+        flagItems++;
+      
         
-    }
+    }  else if (level === 2 && flagItems === 2)   {
 
-    if (level === 2 && flagItems === 2)   {
+        userCounter = 0;
+        compCounter = 0;
+        userScore.innerText = userCounter; 
+        compScore.innerText = compCounter;  
+
+        console.log("RESET1", userCounter, " ", compCounter);
         
         let addIcon = document.getElementById(4);
         
@@ -216,10 +222,45 @@ function playGame() {
             whoWon = showResult(userChoice, compChoice);             
               
                     
-        }); 
+        });
+        flagItems++;
    
-    };
-    flagItems++;  
+    }   else if (level === 3 && flagItems === 3)   {
+
+            userCounter = 0;
+            compCounter = 0;
+            userScore.innerText = userCounter; 
+            compScore.innerText = compCounter;  
+    
+            console.log("RESET1", userCounter, " ", compCounter);
+            
+            let addIcon = document.getElementById(5);
+            
+            console.log("addIcon", addIcon);
+            
+            userCounter = 0;
+            compCounter = 0;
+            userScore.innerText = userCounter; 
+            compScore.innerText = compCounter; 
+    
+    
+            addIcon.addEventListener("click", function() {       
+                             
+                userChoice = addIcon.id;
+    
+                // console.log("userChoice", userChoice);
+    
+                compChoice = computerChoice();
+    
+                result = calculateResult(userChoice, compChoice);
+    
+                whoWon = showResult(userChoice, compChoice);             
+                  
+                        
+            }); 
+            flagItems++;       
+        }           
+    
         
 }
 
