@@ -27,6 +27,23 @@ const arrChoices = [
     [4, 1, -1], [4, 2, -1], [4, 3, 1], [4, 4, 0], [4, 5, 1],
     [5, 1, 1], [5, 2, 1], [5, 3, -1], [5, 4, -1], [5, 5, 0]                
   ]; 
+
+function restartGame() {
+    level = 1;
+    flagItems = 1;
+    userCounter = 0;
+    compCounter = 0;
+    flagAgain = 0; 
+    userCounter = 0;
+    compCounter = 0;
+    userScore.innerText = userCounter; 
+    compScore.innerText = compCounter;
+    levelText.innerText = "Level 1";     
+    showResults.id = "show-results-hidden";   
+
+    closePopup();    
+    startGame();
+}
    
 
 function startGame() {   
@@ -118,7 +135,7 @@ function startGame() {
         console.log("gameOver1");
         gameOver();
     }
-}
+
       
     for (let i=0; i < length; i++) {
    

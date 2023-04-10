@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Nanum+Gothic&display=swap');
 
-body {
-    height: 100vh;
+body {    
+    min-height: 100vh;
     background: url('../images/favpng_angle-line-pattern-point-font1.png') no-repeat center center;
     background-color: #fffef4;
+    background-attachment: fixed;
     font-family: Nanum Gothic, Arial, Helvetica, sans-serif;
-    color: #006E7F;
-    display: flex;
-    flex-direction: column;
+    color: #006E7F;    
+    margin: 0;
+    padding: 0;
 }
 
 header {
