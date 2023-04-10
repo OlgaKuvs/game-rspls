@@ -91,8 +91,8 @@ h3 {
 .circular-menu {
     position: relative;
     align-items: center;
-    width: 400px;
-    height: 400px;          
+    width: 350px;
+    height: 350px;          
 }
 
 .circular-menu-item {
@@ -103,8 +103,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;    
     text-decoration: none;
     background-color: #fff;
@@ -137,8 +137,8 @@ h3 {
     align-items: center;
     justify-content: center;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background-color: #faecb9;
     color: #B22727;
