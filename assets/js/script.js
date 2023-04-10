@@ -387,7 +387,7 @@ function showResult(userChoiceRes, compChoiceRes) {
         whoWonContainer.innerHTML = "<h1>DRAW</h1>";
         console.log("result3", result); 
     } else if (result === -1) {
-        whoWonContainer.innerHTML = "<h1>Sorry, you lost...</h1>";        
+        whoWonContainer.innerHTML = "<h1>Sorry, you loose...</h1>";        
         compCounter++;  
         compScore.innerText = compCounter;   
         console.log("result4", result);     
@@ -424,7 +424,7 @@ if (userCounterNew === 1  && level < 3) {
 
 } else if (compCounterNew === 3 && level < 3) {
     popUpLevel.style.display = "block";              
-    popupLevelMessage.innerHTML = "<h1>Sorry, you lost...</h1>";          
+    popupLevelMessage.innerHTML = "<h1>Sorry, you loose...</h1>";          
 
 
 } else if(compCounterNew === 3 && level >= 3) {
