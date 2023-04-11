@@ -20,9 +20,11 @@ let flagAgain = 0;
 let length = items.length;
 const radius = 50;
 
-for (let item of items) { 
-    item.addEventListener("click", menuItemClick);
-}
+document.addEventListener("DOMContentLoaded", function(){
+    for (let item of items) { 
+        item.addEventListener("click", menuItemClick);
+    }    
+});
 
 const arrChoices = [
     [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
@@ -307,27 +309,31 @@ function setGameLevel(userCounterNew, compCounterNew) {
     console.log("level", level); 
 
 
-if (userCounterNew === 1  && level < 3) {
+if (userCounterNew === 3  && level < 3) {
 
     popUpLevel.style.display = "block"; 
     levelUpHide.style.visibility = "visible";       
     // console.log(popupLevelMessage);
     popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
-    level++;       
+    level++; 
+    button.id = 'circular-menu-item-hidden';
+    hideGameItems();        
     
 
 } else if (compCounterNew === 3 && level < 3) {
     popUpLevel.style.display = "block";              
-    popupLevelMessage.innerHTML = "<h1>Sorry, you loose...</h1>";          
+    popupLevelMessage.innerHTML = "<h1>Sorry, you loose...</h1>";
+    button.id = 'circular-menu-item-hidden';
+    hideGameItems();            
 
 
-} else if(compCounterNew === 3 && level >= 3) {
-    //console.log("gameOver1");
-    gameOver();
+ } else if(compCounterNew === 3 && level > 3) {
+        //console.log("gameOver1");
+        gameOver();
 } else if(userCounterNew === 3 && level >= 3) {
-    console.log("gameOver1");
-    gameOverWon();
-}    
+        console.log("gameOver1");
+        gameOverWon();
+}   
 }
 
 function closePopup(){     
