@@ -200,7 +200,7 @@ function menuItemClick() {
                 
     userChoice = this.id;
 
-    compChoice = computerChoice();
+    compChoice = computerChoice(level);
 
     result = calculateResult(userChoice, compChoice);
 
@@ -215,9 +215,17 @@ function menuItemClick() {
 }  
 
 
-function computerChoice() {
-    let compChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+function computerChoice(level) {
+    if(level === 1) {        
+        let compChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     return compChoice;
+    } else if(level === 2) {
+        let compChoice = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+    return compChoice;
+    } else if(level === 3) {
+        let compChoice = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    return compChoice;
+    }    
 }
 
 
@@ -327,7 +335,7 @@ if (userCounterNew === 3  && level < 3) {
     hideGameItems();            
 
 
- } else if(compCounterNew === 3 && level > 3) {
+ } else if(compCounterNew === 3 && level >= 3) {
         //console.log("gameOver1");
         gameOver();
 } else if(userCounterNew === 3 && level >= 3) {
