@@ -20,11 +20,21 @@ let flagAgain = 0;
 let length = items.length;
 const radius = 50;
 
+// Wait for the DOM to finish loading before running the game
+// Get event listeners for the game items
+
 document.addEventListener("DOMContentLoaded", function(){
     for (let item of items) { 
         item.addEventListener("click", menuItemClick);
     }    
 });
+
+/**
+ * Array containing as 1st element user choice, 
+ * 2nd element computer choice and
+ * 3rd element the result
+ * 
+ */
 
 const arrChoices = [
     [1, 1, 0], [1, 2, 1], [1, 3, -1], [1, 4, 1], [1, 5, -1], 
@@ -33,6 +43,8 @@ const arrChoices = [
     [4, 1, -1], [4, 2, -1], [4, 3, 1], [4, 4, 0], [4, 5, 1],
     [5, 1, 1], [5, 2, 1], [5, 3, -1], [5, 4, -1], [5, 5, 0]                
   ]; 
+
+// Resets all options on restarting the game
 
 function restartGame() {
     level = 1;
@@ -51,6 +63,8 @@ function restartGame() {
     startGame();
 }
 
+// The main game function calls other functions and checkes if this is an initial game or repeated game
+
 function startGame() { 
 
     setNumberOfItems(); 
@@ -65,6 +79,8 @@ function startGame() {
         //console.log("aaa");
     }    
 }
+
+// Sets the number of game items depending on the game level  
    
 function setNumberOfItems() {
     if(level === 1) {  
@@ -144,6 +160,7 @@ function setNumberOfItems() {
 
 }
 
+// Function to hide results window
 
  function hideResults() {    
        
@@ -153,6 +170,9 @@ function setNumberOfItems() {
     showGameItems();
 
 } 
+
+/* Check and change game level
+Reset user score and computer score */
 
 function checkLevel() {         
 
@@ -187,6 +207,7 @@ function checkLevel() {
     }
 }
 
+// Function to show sections for next game page
 
 function ShowHideSections() {
     button.id = 'circular-menu-item-hidden';
@@ -195,6 +216,11 @@ function ShowHideSections() {
     levelText.style.display = "block"; 
     scoreboard.style.display = "block";     
 }
+
+/**
+ * Checks the user choice and call functions to get computer choice, 
+ * calculate result and show who won 
+ */
 
 function menuItemClick() {               
                 
@@ -214,6 +240,7 @@ function menuItemClick() {
    
 }  
 
+/* Get a random game items from available amount for the current level */
 
 function computerChoice(level) {
     if(level === 1) {        
@@ -228,6 +255,12 @@ function computerChoice(level) {
     }    
 }
 
+/**
+ * Сompares the user's choice with the 1st element of the array and 
+ * the computer's choice with the 2nd element
+ * and returns the 3rd element as the result
+ */
+
 
 function calculateResult(userChoiceFP, compChoiceFP) {    
    
@@ -241,6 +274,8 @@ function calculateResult(userChoiceFP, compChoiceFP) {
     }
     
 }
+
+// Function shows window with both choices and game result
 
 function showResult(userChoiceRes, compChoiceRes) {
 
@@ -309,6 +344,8 @@ function showResult(userChoiceRes, compChoiceRes) {
 
 }
 
+// Function shows who got score=3 and won
+// Calls game over function after level 3
 
 function setGameLevel(userCounterNew, compCounterNew) {
 
@@ -344,9 +381,13 @@ if (userCounterNew === 3  && level < 3) {
 }   
 }
 
+// Close popup window
+
 function closePopup(){     
     popUpLevel.style.display = "none";     
 }
+
+// Functions called after passing the last level
 
 function gameOver() { 
     levelUpHide.style.visibility = "hidden";
@@ -362,6 +403,8 @@ function gameOverWon() {
     button.id = 'circular-menu-item-hidden';
     hideGameItems();
 }
+
+// Hide and show game items 
 
 function hideGameItems() {
     for (let i=0; i < length; i++) {          
