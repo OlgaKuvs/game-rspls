@@ -301,7 +301,7 @@ function setGameLevel(userCounterNew, compCounterNew) {
     if (userCounterNew === 3  && level < 3) {
 
         popUpLevel.style.display = "block"; 
-        levelUpHide.style.visibility = "visible";    
+        levelUpHide.style.display = "block";    
         popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
         level++; 
         button.id = 'circular-menu-item-hidden';
@@ -333,14 +333,14 @@ function closePopup(){
 // Functions called after passing the last level
 
 function gameOver() { 
-    levelUpHide.style.visibility = "hidden";
+    levelUpHide.style.display = "none"; 
     popUpLevel.style.display = "block";
     popupLevelMessage.innerHTML = "<h1>Game over!</h1>";
     button.id = 'circular-menu-item-hidden';       
 }
 
 function gameOverWon() {
-    levelUpHide.style.visibility = "hidden";
+    levelUpHide.style.display = "none"; 
     popUpLevel.style.display = "block";
     popupLevelMessage.innerHTML = "<div><b>CONGRADUATIONS!</b></div><br><div><b>You beat the computer!</b></div><br>";
     button.id = 'circular-menu-item-hidden';

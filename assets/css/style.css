@@ -367,10 +367,38 @@ footer {
         height: 450px;           
     }
     
-    .popup-buttons {
-        width: 120px;
-        height: 40px;        
+    .popup-buttons {               
         font-size: 15px;      
         margin-left: 15px;       
     } 
 }
+
+@media only screen and (max-width: 800px) {
+    .game-rules-image {
+        height: 420px;      
+    }
+
+    .game-rules-image > img {
+        width: 526px;
+        height: 420px;        
+    }    
+    
+    .show-results {        
+        margin-top: 10px;         
+        padding: 10px;                    
+    }
+    
+    #who-won {
+        margin: 10px;        
+    }
+
+    h1, h2, .start-button { 
+        font-size: 1.3rem;
+    }
+
+    figcaption {
+        font-size: 1.1rem; 
+    }
+    
+}  
+
