@@ -1,7 +1,8 @@
 const menu = document.querySelector('.circular-menu');
 const items = menu.querySelectorAll('.circular-menu-item');
 const button = menu.querySelector('.start-button');
-const rulesImage = document.querySelector('.game-rules');
+const rulesImage = document.querySelector('.game-rules');  
+const whoWonContainer = document.getElementById("who-won");
 const finalResults = document.querySelector('.show-results');
 const levelText = document.querySelector('.level-text');
 const scoreboard = document.querySelector('.scoreboard');
@@ -267,9 +268,7 @@ function showResult(userChoiceRes, compChoiceRes) {
             
     }
 
-    finalResults.removeAttribute("id");  
-    
-    let whoWonContainer = document.getElementById("who-won");
+    finalResults.removeAttribute("id");    
 
     if(result === 1) {    
         whoWonContainer.innerHTML = "<h1>YOU WON!!!</h1>"; 
