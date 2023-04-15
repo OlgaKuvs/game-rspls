@@ -127,7 +127,7 @@ function setNumberOfItems() {
         const arc = 2* Math.PI * (1 / length);
         
         for (let i=0; i < length; i++) {
-            const angle = i * arc + 45;
+            const angle = i * arc + 175;
             const x = radius * Math.cos(angle);
             const y = radius * Math.sin(angle);
 
