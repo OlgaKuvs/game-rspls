@@ -399,6 +399,83 @@ footer {
     figcaption {
         font-size: 1.1rem; 
     }
-    
+
+    .start-button:hover {
+        font-size: 1.6rem;        
+    }
+
+    .popup-level {
+        height: 120px;
+        width: 450px;         
+    }    
 }  
 
+@media only screen and (max-width: 640px) {
+    .circular-menu-item, .start-button {        
+        width: 110px;
+        height: 110px; 
+        border-width: 7px;    
+    }
+
+    .circular-menu {
+        width: 250px;
+        height: 250px;            
+    }
+
+    .circular-menu-item > figure > img {
+        width: 130%;
+        height: 130%; 
+    }
+
+    .game-rules-image > img {
+        width: 474px;
+        height: 378px;        
+    } 
+
+    figcaption {
+        font-size: 0.9rem; 
+    }
+
+    .start-button {
+        font-size: 1rem; 
+    }
+
+    .start-button:hover {
+        font-size: 1.2rem;        
+    }
+
+    .show-results {     
+        padding: 5px; 
+        width: 450px;                   
+    }
+    
+    #user-choice, #computer-choice {       
+        font-size: 0.8rem; 
+        text-align: center;   
+    }
+
+    #user-choice > figure > img, #computer-choice > figure > img {
+        width: 50px;
+        height: 50px;       
+    }
+
+    #who-won {
+        font-size: 1rem;        
+    }
+
+    #footer-container {        
+        height: 1rem; 
+        font-size: 0.8rem;              
+    }
+
+    .circular-menu-item, .start-button { 
+        position: absolute;
+        top: 15%;
+    }
+
+    .popup-level {
+        top: 10%;
+        height: 100px;
+    }
+    
+}
