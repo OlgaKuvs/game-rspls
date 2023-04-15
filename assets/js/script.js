@@ -75,24 +75,19 @@ function startGame() {
     } else {
         hideResults();
         checkLevel();
-        closePopup();        
-        //console.log("aaa");
+        closePopup();       
     }    
 }
 
 // Sets the number of game items depending on the game level  
    
 function setNumberOfItems() {
-    if(level === 1) {  
-        
-        // console.log("flag 1", userCounter);
-
+    if(level === 1) {         
+    
         hideGameItems();
 
         length = 3;        
-        const arc = 2* Math.PI * (1 / length);
-
-        //console.log(length);
+        const arc = 2* Math.PI * (1 / length);      
 
         for (let i=0; i < length; i++) {
             const angle = i * arc + 100;
@@ -101,16 +96,11 @@ function setNumberOfItems() {
 
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
-            showGameItems();
-            //console.log(items[i]);
-           
+            showGameItems();          
         }  
 
-    } else if(level === 2) {        
+    } else if(level === 2) {       
        
-
-        console.log("flag 2", userCounter);
-        
         levelText.innerText = "Level 2";          
 
         hideGameItems();
@@ -118,18 +108,14 @@ function setNumberOfItems() {
         length = 4;        
         const arc = 2* Math.PI * (1 / length);
 
-        console.log(length);
-
-        for (let i=0; i < length; i++) {
+         for (let i=0; i < length; i++) {
             const angle = i * arc + 150;
             const x = radius * Math.cos(angle);
             const y = radius * Math.sin(angle);
 
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
-            showGameItems();
-            // console.log(items[i]);
-           
+            showGameItems();           
         }  
     } else if(level === 3) { 
 
@@ -139,9 +125,7 @@ function setNumberOfItems() {
 
         length = 5;        
         const arc = 2* Math.PI * (1 / length);
-
-        console.log(length);
-
+        
         for (let i=0; i < length; i++) {
             const angle = i * arc + 45;
             const x = radius * Math.cos(angle);
@@ -150,8 +134,6 @@ function setNumberOfItems() {
             items[i].style.left = 50 + x + '%';
             items[i].style.top = 50 + y + '%';
             showGameItems();
-            //console.log(items[i]);
-           
         }  
 
     } else {
@@ -187,7 +169,6 @@ function checkLevel() {
         userScore.innerText = userCounter; 
         compScore.innerText = compCounter;  
 
-        console.log("RESET", userCounter, " ", compCounter);           
         flagItems++;    
 
     } else if(level === 3 && flagItems === 3) {          
@@ -197,13 +178,10 @@ function checkLevel() {
         userScore.innerText = userCounter; 
         compScore.innerText = compCounter;  
 
-        console.log("RESET3", userCounter, " ", compCounter);
-            
         flagItems++;    
 
     }  else {
-            console.log("gameOver3");
-            gameOver();
+        gameOver();
     }
 }
 
@@ -231,13 +209,6 @@ function menuItemClick() {
     result = calculateResult(userChoice, compChoice);
 
     whoWon = showResult(userChoice, compChoice); 
-
-// console.log(' User1 ' + userChoice);                
-
-    //console.log(' comp1 ' + compChoice);                
-
-    //console.log(' res1 ' + result);  
-   
 }  
 
 /* Get a random game items from available amount for the current level */
@@ -266,8 +237,7 @@ function calculateResult(userChoiceFP, compChoiceFP) {
    
     for(let i=0; i<arrChoices.length; i++) {  
         
-        if(parseInt(userChoiceFP) === arrChoices[i][0] && compChoiceFP === arrChoices[i][1]) {
-            console.log(" User "  + userChoiceFP + " Comp " + compChoiceFP + " Result " + arrChoices[i][2]);
+        if(parseInt(userChoiceFP) === arrChoices[i][0] && compChoiceFP === arrChoices[i][1]) {            
             return arrChoices[i][2];
         }        
     
@@ -277,20 +247,12 @@ function calculateResult(userChoiceFP, compChoiceFP) {
 
 // Function shows window with both choices and game result
 
-function showResult(userChoiceRes, compChoiceRes) {
-
-    // console.log("flag 4", userCounter);
+function showResult(userChoiceRes, compChoiceRes) {    
 
     let userId = userChoiceRes;
     let compId = compChoiceRes.toString();
 
-    console.log(userId);
-    console.log(compId);
-
-    let userChoiceFigure = document.getElementById(userId).innerHTML;
-
-    console.log(userChoiceFigure);
-    
+    let userChoiceFigure = document.getElementById(userId).innerHTML;    
 
     let userContainer = document.getElementById("user-choice");
     userContainer.innerHTML = `<h2>Your choice</h2> <br> ${userChoiceFigure}`;
@@ -300,8 +262,6 @@ function showResult(userChoiceRes, compChoiceRes) {
     
     compContainer.innerHTML = `<h2>Computer choice</h2> <br> ${compChoiceFigure}`;
 
-    console.log(compContainer);
-
     for (let item of items) {            
             item.removeAttribute('style');
             
@@ -309,35 +269,25 @@ function showResult(userChoiceRes, compChoiceRes) {
 
     finalResults.removeAttribute("id");  
     
-     let whoWonContainer = document.getElementById("who-won");
+    let whoWonContainer = document.getElementById("who-won");
 
-     console.log("result1 =", result);
-
-
-
-     if(result === 1) {    
+    if(result === 1) {    
         whoWonContainer.innerHTML = "<h1>YOU WON!!!</h1>"; 
         userCounter++;  
-        userScore.innerText = userCounter;                
-        console.log("userCounter", userCounter); 
-        console.log("result2", result);   
+        userScore.innerText = userCounter; 
 
     } else if (result === 0) {
         whoWonContainer.innerHTML = "<h1>DRAW</h1>";
-        console.log("result3", result); 
+        
     } else if (result === -1) {
         whoWonContainer.innerHTML = "<h1>Sorry, you loose...</h1>";        
         compCounter++;  
         compScore.innerText = compCounter;   
-        console.log("result4", result);     
-        console.log("compScore.innerText", compScore.innerText);  
     }   
      
     button.id = '';
     button.textContent = "Play again";    
 
-    //console.log("Button", button);    
-    
     flagAgain = 1;  
     
     newLevel = setGameLevel(userCounter, compCounter);
@@ -348,21 +298,15 @@ function showResult(userChoiceRes, compChoiceRes) {
 // Calls game over function after level 3
 
 function setGameLevel(userCounterNew, compCounterNew) {
+    
+    if (userCounterNew === 3  && level < 3) {
 
-    console.log("userCounterNew", userCounterNew);
-    console.log("compCounterNew", compCounterNew); 
-    console.log("level", level); 
-
-
-if (userCounterNew === 3  && level < 3) {
-
-    popUpLevel.style.display = "block"; 
-    levelUpHide.style.visibility = "visible";       
-    // console.log(popupLevelMessage);
-    popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
-    level++; 
-    button.id = 'circular-menu-item-hidden';
-    hideGameItems();        
+        popUpLevel.style.display = "block"; 
+        levelUpHide.style.visibility = "visible";    
+        popupLevelMessage.innerHTML = "<h1>You won 3 times!</h1>";
+        level++; 
+        button.id = 'circular-menu-item-hidden';
+        hideGameItems();        
     
 
 } else if (compCounterNew === 3 && level < 3) {
@@ -372,12 +316,12 @@ if (userCounterNew === 3  && level < 3) {
     hideGameItems();            
 
 
- } else if(compCounterNew === 3 && level >= 3) {
-        //console.log("gameOver1");
+ } else if(compCounterNew === 3 && level >= 3) {        
         gameOver();
+        hideGameItems(); 
 } else if(userCounterNew === 3 && level >= 3) {
-        console.log("gameOver1");
         gameOverWon();
+        hideGameItems(); 
 }   
 }
 
