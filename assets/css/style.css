@@ -448,11 +448,10 @@ footer {
         padding: 5px; 
         width: 450px;                   
     }
-    
-    #user-choice, #computer-choice {       
-        font-size: 0.8rem; 
-        text-align: center;   
-    }
+
+    #user-choice > h2, #computer-choice > h2 {    
+        font-size: 1rem;         
+     }      
 
     #user-choice > figure > img, #computer-choice > figure > img {
         width: 50px;
@@ -471,11 +470,39 @@ footer {
     .circular-menu-item, .start-button { 
         position: absolute;
         top: 15%;
-    }
+    }   
 
-    .popup-level {
-        top: 10%;
-        height: 100px;
+    .logo {
+        margin-left: 5px;
     }
     
 }
+
+/* Extra small devices (500px and down) */
+
+@media only screen and (max-width: 500px) {
+
+.game-rules-image {
+    height: 273px;      
+}
+.game-rules-image > img {
+    width: 342px;
+    height: 273px;        
+} 
+
+.circular-menu {
+    width: 220px;
+    height: 220px;            
+}
+
+.show-results {    
+    width: 300px;                   
+}
+
+.popup-level {        
+    width: 300px; 
+    top: 12%;        
+} 
+
+}
+

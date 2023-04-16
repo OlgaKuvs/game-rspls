@@ -294,7 +294,7 @@ function showResult(userChoiceRes, compChoiceRes) {
 }
 
 // Function shows who got score=3 and won
-// Calls game over function after level 3
+// Calls gameOver function after level 3
 
 function setGameLevel(userCounterNew, compCounterNew) {
     
