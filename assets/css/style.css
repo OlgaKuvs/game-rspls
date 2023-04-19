@@ -107,7 +107,7 @@ h3 {
 
 .circular-menu-item {
     position: absolute;
-    top: 25%;
+    top: 28%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -130,7 +130,7 @@ h3 {
 
 .start-button {
     position: absolute;
-    top: 25%;
+    top: 28%;
     left: 50%;
     display: flex;
     align-items: center;
@@ -465,12 +465,7 @@ footer {
     #footer-container {        
         height: 1rem; 
         font-size: 0.8rem;              
-    }
-
-    .circular-menu-item, .start-button { 
-        position: absolute;
-        top: 15%;
-    }   
+    }    
 
     .logo {
         margin-left: 5px;
@@ -512,7 +507,7 @@ footer {
     .popup-buttons {                
         font-size: 12px;      
         margin-left: 10px; 
-        width: 120px;
+        width: 100px;
         height: 30px;      
     } 
 
