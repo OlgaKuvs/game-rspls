@@ -342,7 +342,7 @@ function gameOver() {
 function gameOverWon() {
     levelUpHide.style.display = "none"; 
     popUpLevel.style.display = "block";
-    popupLevelMessage.innerHTML = "<div><b>CONGRADUATIONS!</b></div><br><div><b>You beat the computer!</b></div><br>";
+    popupLevelMessage.innerHTML = "<div><b>CONGRATULATIONS!</b></div><br><div><b>You beat the computer!</b></div><br>";
     button.id = 'circular-menu-item-hidden';
     hideGameItems();
 }

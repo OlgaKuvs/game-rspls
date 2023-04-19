@@ -482,27 +482,42 @@ footer {
 
 @media only screen and (max-width: 500px) {
 
-.game-rules-image {
-    height: 273px;      
+    #who-won > h1 {
+        font-size: 0.8rem; 
+    }
+
+    .game-rules-image {
+        height: 273px;      
+    }
+    .game-rules-image > img {
+        width: 342px;
+        height: 273px;        
+    } 
+
+    .circular-menu {
+        width: 220px;
+        height: 220px;            
+    }
+
+    .show-results {    
+        width: 300px;                   
+    }
+
+    .popup-level {        
+        width: 300px; 
+        height: 100px;
+        top: 12%;        
+    } 
+
+    .popup-buttons {                
+        font-size: 12px;      
+        margin-left: 10px; 
+        width: 120px;
+        height: 30px;      
+    } 
+
+    .popup-level-message > h1 {
+        font-size: 0.9rem; 
+    }
+    
 }
-.game-rules-image > img {
-    width: 342px;
-    height: 273px;        
-} 
-
-.circular-menu {
-    width: 220px;
-    height: 220px;            
-}
-
-.show-results {    
-    width: 300px;                   
-}
-
-.popup-level {        
-    width: 300px; 
-    top: 12%;        
-} 
-
-}
-
