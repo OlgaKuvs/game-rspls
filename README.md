@@ -3,7 +3,7 @@
 ![screenshot different screens](documentation/about_us_screenshot.png
 )
 
-### Live site here - [RSPLS](https://olgakuvs.github.io/game-rspls/index.html)
+### [Live site](https://olgakuvs.github.io/game-rspls/index.html)
 
 ## Contents:
 

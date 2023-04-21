@@ -13,17 +13,20 @@
     <title>Game Rock, Scissors, Paper, Lizard, Spock</title>
 </head>
 <body>
+     <!--Header-->
     <header>
         <div>
             <a href="index.html" class="heading"><h1><span class="logo"> Rock </span> <span class="logo"> Scissors </span> <span class="logo"> Paper </span> 
                 <span class="logo"> Lizard </span> <span class="logo"> Spock </span></h1></a>
         </div>            
-    <section>        
+    <section>
+        <!--Scoreboard popup window content-->         
         <div class="scoreboard">
             <div class="scorebox">
                 <h1 class="level-text">Level 1</h1> <h2>User</h2> <h2><span class="user-score">0</span></h2><h2> | </h2><h2><span class="computer-score">0</span></h2><h2>Computer</h2>
             </div>
         </div>
+        <!--Game Rules page content-->
         <div class="game-rules">
             <div class="game-rules-image">
                 <img src="assets/images/RockPaperScissorsLizardSpock_rules.png" alt="Game rules" > 
@@ -49,13 +52,15 @@
                 </div>
             </div>
         </div>
+        <!--Show who won popup window content--> 
         <div class="wrapper">
             <div class="show-results" id="show-results-hidden">
                 <div id="user-choice"></div>
                 <div id="who-won"></div>        
                 <div id="computer-choice"></div>            
             </div>
-        </div>         
+        </div>
+        <!--Game area content-->          
         <div class="wrapper">
             <div class="circular-menu">
                  <a href="#" class="circular-menu-item" id="1">
@@ -91,12 +96,11 @@
                 </a>
                 <a href="#" class="start-button start-button-active" onclick="startGame()">
                 <span>Play</span>
-                </a>
-                
+                </a>                
             </div>
-        </div>
-       
+        </div>       
     </section>
+    <!--Popup options window content--> 
     <div class="popup-level">
         <div>
             <div class="popup-level-message">
@@ -108,6 +112,7 @@
             </div>                                   
         </div>
     </div>
+        <!--Footer--> 
         <footer>
             <div id="footer-container">
                 Olga Kuvs 2023 All Rights Reserved
