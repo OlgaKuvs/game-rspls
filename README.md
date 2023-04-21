@@ -10,7 +10,12 @@
 - <a href="#introduction">Introduction</a>
 - <a href="#design">Design of the website</a>    
     - <a href="#fonts&colours">Fonts and colours</a>
-- <a href="#flow">Game Flow</a>    
+- <a href="#flow">Game Flow</a>
+- <a href="#technologies">Technologies Used</a>
+    - <a href="#languages">Languages</a>
+    - <a href="#frameworks">Frameworks, Libraries & Programs Used</a>
+- <a href="#testing">Testing</a>
+    - <a href="#validation">Validation</a>      
     
 
 ## <div id="introduction">Introduction</div>
@@ -113,3 +118,19 @@ The game logo at the header links to the main page from every page on the site a
 - [Git](https://git-scm.com/) used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) used to store the project's code after being pushed from Git.
 - [Gitpod](https://www.gitpod.io/)
+
+## <div id="testing">Testing</div>
+
+### <div id="validation">Validation</div>
+
+ - Use [W3C Markup Validation Service](https://validator.w3.org/) to validate index.html page. The page pass with no errors and no warnings to show.
+
+ ![HTML checked](documentation/html_checked.png)
+
+ - Use [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to validate CSS file. File pass with no errors.
+
+ ![CSS checked](documentation/css_checked.png)
+
+ - Lighthouse in Chrome DevTools used to check performance. No significant errors were found.
+
+ ![Lighthouse in Chrome DevTools](documentation/lighthouse_desktop.png)
