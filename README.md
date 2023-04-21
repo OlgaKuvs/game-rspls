@@ -105,11 +105,11 @@ The game logo at the header links to the main page from every page on the site a
 
 ### <div id="frameworks">Frameworks, Libraries & Programs Used</div>
 - [Diagrams.net](https://app.diagrams.net/) used to create a flowchart for the game.
-- [Google Fonts:](https://fonts.google.com/) used to import Alkatra and Nanum Gothic fonts into the style.css file which are used on all pages of the project.
+- [Google Fonts](https://fonts.google.com/) used to import Alkatra and Nanum Gothic fonts into the style.css file which are used on all pages of the project.
 - [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) used to create game icons and game rules image.
 - [Am I Responsive](https://ui.dev/amiresponsive) used to generate screenshot of different screens.
 - [W3Schools](https://www.w3schools.com/) used for general search for JavaScript, HTML and CSS syntax queries.
 - [CSS-Tricks](https://css-tricks.com/) used for help with flex box and alignment.
-- [Git:](https://git-scm.com/) used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Git](https://git-scm.com/) used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) used to store the project's code after being pushed from Git.
 - [Gitpod](https://www.gitpod.io/)

@@ -241,6 +241,11 @@ h3 {
     color: #EE5007;
 }
 
+.scorebox > .level-text {
+    margin-right: 70px;
+    color: #006E7F;
+}
+
 figcaption {
     font-size: 1.5rem;
     text-decoration: none;
@@ -270,8 +275,7 @@ figcaption {
 }
 
 .level-text {
-    display: none;
-    margin-right: 70px;
+    display: none;    
 }
 
 .scoreboard {
