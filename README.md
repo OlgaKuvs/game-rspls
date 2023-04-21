@@ -3,7 +3,7 @@
 ![screenshot different screens](documentation/about_us_screenshot.png
 )
 
-##### [Live link](https://olgakuvs.github.io/game-rspls/index.html)
+### [Live site](https://olgakuvs.github.io/game-rspls/index.html)
 
 ## Contents:
 
@@ -95,3 +95,21 @@ If the user won at level 3, a popup window appears with congratulations and 2 bu
 The game logo at the header links to the main page from every page on the site as this is expected by the user.
 
 ![Header](documentation/header.png)
+
+## <div id="technologies">Technologies Used</div>
+
+### <div id="languages">Languages</div>
+- HTML5 used to structure my website.
+- CSS3 used to style and add circular dropdown game icons to my project.
+- JavaScript used to make the site dynamic, compare user and computer choices, analyze and display the result.
+
+### <div id="frameworks">Frameworks, Libraries & Programs Used</div>
+- [Diagrams.net](https://app.diagrams.net/) used to create a flowchart for the game.
+- [Google Fonts:](https://fonts.google.com/) used to import Alkatra and Nanum Gothic fonts into the style.css file which are used on all pages of the project.
+- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) used to create game icons and game rules image.
+- [Am I Responsive](https://ui.dev/amiresponsive) used to generate screenshot of different screens.
+- [W3Schools](https://www.w3schools.com/) used for general search for JavaScript, HTML and CSS syntax queries.
+- [CSS-Tricks](https://css-tricks.com/) used for help with flex box and alignment.
+- [Git:](https://git-scm.com/) used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) used to store the project's code after being pushed from Git.
+- [Gitpod](https://www.gitpod.io/)
