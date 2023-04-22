@@ -15,7 +15,11 @@
     - <a href="#languages">Languages</a>
     - <a href="#frameworks">Frameworks, Libraries & Programs Used</a>
 - <a href="#testing">Testing</a>
-    - <a href="#validation">Validation</a>      
+    - <a href="#validation">Validation</a>
+    - <a href="#browser">Browser compatability</a>
+    - <a href="#responsiveness">Responsiveness</a>
+    - <a href="#manual_testing">Manual Testing</a>
+    - <a href="#bugs">Bugs</a>       
     
 
 ## <div id="introduction">Introduction</div>
@@ -134,3 +138,49 @@ The game logo at the header links to the main page from every page on the site a
  - Lighthouse in Chrome DevTools used to check performance. No significant errors were found.
 
  ![Lighthouse in Chrome DevTools](documentation/lighthouse_desktop.png)
+
+ ### <div id="browser">Browser compatibility</div>
+
+The website was tested on the following browsers:
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+### <div id="responsiveness">Responsiveness</div>
+
+The website was tested on numerous sized screens including iPhones SE, XR, 12 Pro, Samsungs Galaxy S8, S20, Redmi Note 9, iPad Air, Mini, 15" laptop and was found to respond as expected to all sizes. Chrome DevTools was used throughout the design process to check responsiveness and breakpoints. Adjustments were made accordingly.
+
+### <div id="manual_testing">Manual Testing</div>
+
+|  Test |  Result |   
+|---|---|
+| When the user click on the start game button game runs. | Pass |
+| When the user chooses an icon the result window popups. | Pass |
+| Depending on the choice of computer, the comparison with the choice of the user and the result shown are correct. | Pass |
+| After each move, the score is displayed correctly. | Pass |
+| When moving to the next level, the score is reset to zero. | Pass |
+| The counter correctly adds the score after each move. | Pass |
+| When the user won 3 times, a window appears with the ability to move to the next level. | Pass |
+| When the computer won 3 times, a window appears with the ability to restart game. | Pass |
+| When moving to the next level, 1 more game icon is added.  | Pass |
+| If the user won 3 times on the 3rd level, then a popup window appears with congratulations.  | Pass |
+| The game logo at the header links to the main page from every page. | Pass |
+
+### <div id="bugs">Bugs</div>
+
+|  Issue |  Solution |   
+|---|---|
+| When moving to the next level second instance of game icons was added by addEventListerner and the counter showed incorrect numbers. | addEventListener method was moved to the beginning of the file. |
+| The computer always chose only from 3 icons. | Added the function to check the level of the game and set the required number of icons to select.  |
+| When restarting the game, the values ​​of the variables were not reset. | Added a flag that kept track of whether the game was started for the first time or restarted. |
+| When a popup window appeared, not all game icons disappeared. | Added functions to hide and show different sections on the page. |
+| After the end of the game, the score was not reset. | Fixed bugs in setGameLevel function to finish the game properly. |
+
+
+
+
+
+
+
+
