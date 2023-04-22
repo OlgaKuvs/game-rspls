@@ -9,7 +9,7 @@
 
 - <a href="#introduction">Introduction</a>
 - <a href="#design">Design of the website</a>    
-    - <a href="#fonts&colours">Fonts and colours</a>
+    - <a href="#fonts">Fonts and colours</a>
 - <a href="#flow">Game Flow</a>
 - <a href="#technologies">Technologies Used</a>
     - <a href="#languages">Languages</a>
@@ -19,7 +19,10 @@
     - <a href="#browser">Browser compatability</a>
     - <a href="#responsiveness">Responsiveness</a>
     - <a href="#manual_testing">Manual Testing</a>
-    - <a href="#bugs">Bugs</a>       
+    - <a href="#bugs">Bugs</a>
+- <a href="#deployment">Deployment</a>
+- <a href="#credits">Credits</a>
+- <a href="#acknowledgements">Acknowledgements</a>       
     
 
 ## <div id="introduction">Introduction</div>
@@ -50,9 +53,9 @@ There are three levels; a new icon is added at the new level:
 
 ## <div id="design">Design of the website</div>
 
-### <div id="fonts&colours">Fonts and colours</div>
+### <div id="fonts">Fonts and colours</div>
 
-Nanum Gothic was used for the body and Alkatra for the headings and the logo. Sans Serif was chosen as the backup font. Contrast colours for game icons have been chosen because they are eye-catching, make a suitable atmosphere, and help convey a sense of energy. Simple game icons help keep the site clear and easy to use.
+**Nanum Gothic** was used for the body and **Alkatra** for the headings and the logo. Sans Serif was chosen as the backup font. These fonts for the text and contrast colours for game icons have been chosen because they are eye-catching, make a suitable atmosphere, and help convey a sense of energy. Simple game icons help keep the site clear and easy to use.
 
 To create the colour pallete I used [Adobe Color](https://color.adobe.com/create/color-wheel).
 
@@ -64,7 +67,7 @@ The mockup for the website was created on [Adobe Illustrator](https://www.adobe.
 
 ### <div id="flow">Game Flow</div>
 
-I used [diagrams.net](https://app.diagrams.net/) to create a flowchart an easy-to-follow process. It was nessesary for me to understand the logic needed to complete the project and in what order I should approach it from.
+I used [Flowchart Maker and Online Diagram Software](https://app.diagrams.net/) to create a flowchart an easy-to-follow process. It was nessesary for me to understand the logic needed to complete the project and in what order I should approach it from.
 
 ![Flowchart](documentation/flowchart.png)
 
@@ -108,12 +111,12 @@ The game logo at the header links to the main page from every page on the site a
 ## <div id="technologies">Technologies Used</div>
 
 ### <div id="languages">Languages</div>
-- HTML5 used to structure my website.
-- CSS3 used to style and add circular dropdown game icons to my project.
-- JavaScript used to make the site dynamic, compare user and computer choices, analyze and display the result.
+- **HTML5** used to structure my website.
+- **CSS3** used to style and add circular dropdown game icons to my project.
+- **JavaScript** used to make the site dynamic, compare user and computer choices, analyze and display the result.
 
 ### <div id="frameworks">Frameworks, Libraries & Programs Used</div>
-- [Diagrams.net](https://app.diagrams.net/) used to create a flowchart for the game.
+- [Flowchart Maker and Online Diagram Software](https://app.diagrams.net/) used to create a flowchart for the game.
 - [Google Fonts](https://fonts.google.com/) used to import Alkatra and Nanum Gothic fonts into the style.css file which are used on all pages of the project.
 - [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) used to create game icons and game rules image.
 - [Am I Responsive](https://ui.dev/amiresponsive) used to generate screenshot of different screens.
@@ -176,6 +179,52 @@ The website was tested on numerous sized screens including iPhones SE, XR, 12 Pr
 | When restarting the game, the values ​​of the variables were not reset. | Added a flag that kept track of whether the game was started for the first time or restarted. |
 | When a popup window appeared, not all game icons disappeared. | Added functions to hide and show different sections on the page. |
 | After the end of the game, the score was not reset. | Fixed bugs in setGameLevel function to finish the game properly. |
+
+## <div id="deployment">Deployment</div>
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+1. Log in to [GitHub](https://github.com/) 
+2. Navigate to [OlgaKuvs/game-rspls](https://github.com/OlgaKuvs/game-rspls) in the list of repositories.
+3. In the GitHub repository, go to the [Settings](https://github.com/OlgaKuvs/game-rspls/settings) tab
+4. From the left side menu navigate to Pages, then select the Main Branch
+5. Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
+
+The live link can be found here: [Game: Rock, Scissors, Paper, Lizard, Spock](https://olgakuvs.github.io/game-rspls/index.html)
+
+## <div id="credits">Credits</div>
+
+[codeBurger](https://www.youtube.com/watch?v=RR1Ag4SQ54E&ab_channel=codeBurger) - Youtube
+
+- An interesting tutorial on creating a round dropdown menu. An interesting concept of creating a circular menu with a flexible number of items using JS.
+
+All pictures for the website was created by author on [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) based on the templates:
+
+- freepng.ru used to find template pictures for drawing game icons, for example, [Paper](https://www.freepng.ru/png-y00qsf/), [Lizard](https://www.freepng.ru/png-lpwnhj/), etc.
+
+- [Deviantart](https://www.deviantart.com/iamthemiggy/art/RockPaperScissorsLizardSpock-110094764)  used for game rules template picture.
+
+- [ICONPACKS](https://www.iconpacks.net/free-icon/number-two-13218.html) used as templates for game rules numbers.
+
+## <div id="acknowledgements">Acknowledgements</div>
+
+- My mentor Rahul Lakhanpal for his ongoing support and feedback.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
