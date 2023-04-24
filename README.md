@@ -186,9 +186,9 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 1. Log in to [GitHub](https://github.com/) 
 2. Navigate to [OlgaKuvs/game-rspls](https://github.com/OlgaKuvs/game-rspls) in the list of repositories.
-3. In the GitHub repository, go to the [Settings](https://github.com/OlgaKuvs/game-rspls/settings) tab
-4. From the left side menu navigate to Pages, then select the Main Branch
-5. Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
+3. In the GitHub repository, go to the [Settings](https://github.com/OlgaKuvs/game-rspls/settings).
+4. From the left side menu navigate to Pages, then select the Main Branch.
+5. Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 The live link can be found here: [Game: Rock, Scissors, Paper, Lizard, Spock](https://olgakuvs.github.io/game-rspls/index.html)
 
