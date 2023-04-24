@@ -486,8 +486,10 @@ footer {
     }
 
     .game-rules-image {
-        height: 273px;      
+        height: 273px; 
+        width: 342px;     
     }
+    
     .game-rules-image > img {
         width: 342px;
         height: 273px;        
