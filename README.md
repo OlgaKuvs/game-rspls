@@ -196,7 +196,7 @@ The live link can be found here: [Game: Rock, Scissors, Paper, Lizard, Spock](ht
 
 [codeBurger](https://www.youtube.com/watch?v=RR1Ag4SQ54E&ab_channel=codeBurger) - Youtube
 
-- An interesting tutorial on creating a round dropdown menu. An interesting concept of creating a circular menu with a flexible number of items using JS.
+- An interesting tutorial on creating a round dropdown menu. An interesting concept of creating a circular menu with a flexible number of items using JavaScript.
 
 All pictures for the website was created by author on [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) based on the templates:
 
