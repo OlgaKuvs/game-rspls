@@ -19,6 +19,7 @@
     - <a href="#browser">Browser compatability</a>
     - <a href="#responsiveness">Responsiveness</a>
     - <a href="#manual_testing">Manual Testing</a>
+    - <a href="#functional_testing">Functional Testing</a>
     - <a href="#bugs">Bugs</a>
 - <a href="#deployment">Deployment</a>
 - <a href="#credits">Credits</a>
@@ -84,11 +85,11 @@ When the user clicks on the game icon, a pop-up window appears with his choice, 
 ![Who won](documentation/who_won.png)
 
 The game goes up to 3 wins.
-If the computer won 3 times, then a popup window appears with 2 options: start the game from the beginning or go to the main page:
+If the computer wins 3 times, then a popup window appears with 2 options: start the game from the beginning or go to the main page:
 
 ![User loose](documentation/loose.png)
 
-If the user won 3 times, then a popup window appears with 3 options: start the game from the beginning, go to level up or to the main page:
+If the user wins 3 times, then a popup window appears with 3 options: start the game from the beginning, go to level up or to the main page:
 
 ![User won](documentation/won.png)
 
@@ -158,7 +159,7 @@ The website was tested on numerous sized screens including iPhones SE, XR, 12 Pr
 
 |  Test |  Result |   
 |---|---|
-| When the user click on the start game button game runs. | Pass |
+| When the user clicks on the start game button game runs. | Pass |
 | When the user chooses an icon the result window popups. | Pass |
 | Depending on the choice of computer, the comparison with the choice of the user and the result shown are correct. | Pass |
 | After each move, the score is displayed correctly. | Pass |
@@ -169,6 +170,34 @@ The website was tested on numerous sized screens including iPhones SE, XR, 12 Pr
 | When moving to the next level, 1 more game icon is added.  | Pass |
 | If the user won 3 times on the 3rd level, then a popup window appears with congratulations.  | Pass |
 | The game logo at the header links to the main page from every page. | Pass |
+
+### <div id="functional_testing">Functional Testing</div>
+
+|  Test |  Result |   
+|---|---|
+| The user played "Rock" and the computer played "Scissors" | User wins |
+| The user played "Rock" and the computer played "Lizard"  | User wins  |
+| The user played "Rock" and the computer played "Scissors" | User loses |
+| The user played "Rock" and the computer played "Spock"  | User loses |
+| The user played "Paper" and the computer played "Rock"   |  User wins  |
+| The user played "Paper" and the computer played "Spock"  |  User wins  |
+| The user played "Paper" and the computer played "Scissors"  | User loses |
+| The user played "Paper" and the computer played "Lizard" | User loses |
+| The user played "Scissors" and the computer played "Paper" | User wins |
+| The user played "Scissors" and the computer played "Lizard"  | User wins |
+| The user played "Scissors" and the computer played "Rock"  | User loses |
+| The user played "Scissors" and the computer played "Spock" | User loses |
+| The user played "Lizard" and the computer played "Paper" | User wins |
+| The user played "Lizard" and the computer played "Spock"  | User wins |
+| The user played "Lizard" and the computer played "Rock"  | User loses |
+| The user played "Lizard" and the computer played "Scissors"  | User loses |
+| The user played "Spock" and the computer played "Rock" | User wins |
+| The user played "Spock" and the computer played "Scissors"  | User wins |
+| The user played "Spock" and the computer played "Paper"  | User loses |
+| The user played "Spock" and the computer played "Lizard"  | User loses |
+| The user and the computer played the same  | Tie |
+
+
 
 ### <div id="bugs">Bugs</div>
 
