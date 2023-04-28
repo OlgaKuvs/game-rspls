@@ -101,7 +101,7 @@ At level 3 user can choose from 5 game icons: Rock, Scissors, Paper, Lizard or S
 
 ![Level 3](documentation/level3.png)
 
-If the user won at level 3, a popup window appears with congratulations and 2 buttons to choose from: restart game and main menu.
+If the user won at level 3, a popup window appears with congratulations and 2 buttons to choose from: ==restart game== and ==main menu==.
 
 ![Congratulations](documentation/congrats.png)
 
