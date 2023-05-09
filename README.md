@@ -143,6 +143,10 @@ The game logo at the header links to the main page from every page on the site a
 
  ![Lighthouse in Chrome DevTools](documentation/lighthouse_desktop.png)
 
+ - Use [JSHint](https://jshint.com/) to validate JavaScript. 
+
+No significant issues were found.
+
  ### <div id="browser">Browser compatibility</div>
 
 The website was tested on the following browsers:
